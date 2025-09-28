@@ -1,7 +1,7 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import { AuthProvider } from '@/context/AuthContext';
+import { AuthContextProvider } from '@/context/AuthContext';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
@@ -20,11 +20,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} min-h-screen bg-gray-50 flex flex-col`}>
-        <AuthProvider>
+        <AuthContextProvider>
           <Navbar />
           <main className="flex-grow">{children}</main>
           <Footer />
-        </AuthProvider>
+        </AuthContextProvider>
       </body>
     </html>
   );

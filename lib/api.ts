@@ -63,13 +63,12 @@ export const login = async (email: string, password: string) => {
 };
 
 export const register = async (
-  username: string,
   email: string,
   password: string
 ) => {
   return apiRequest("/auth/register", {
     method: "POST",
-    body: JSON.stringify({ username, email, password }),
+    body: JSON.stringify({ email, password }),
   });
 };
 

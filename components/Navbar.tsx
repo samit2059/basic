@@ -94,13 +94,13 @@ const Navbar = () => {
             ) : (
               <div className="flex items-center space-x-4">
                 <Link
-                  href="/login"
+                  href="/login/main"
                   className="text-gray-700 hover:text-blue-600 transition-colors"
                 >
                   Login
                 </Link>
                 <Link
-                  href="/register"
+                  href="/register/main"
                   className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
                 >
                   Register

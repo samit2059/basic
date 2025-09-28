@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Eye, EyeOff, Mail, Lock, Loader, BookOpen } from "lucide-react";
 import { useAuth } from "@/context/AuthContext";
 import { login } from "@/lib/api";
+import {loginUser , AuthError} from "@/lib/auth"
 import axios from "axios";
 export default function LoginPage() {
   const router = useRouter();
@@ -49,10 +50,11 @@ export default function LoginPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsLoading(true);
+    // setErrors(null)
     if(!validateForm()) return;
 
 try{
-  setIsLoading(true);
   setErrors({});
   const res = await axios.post("https://egov-backend.vercel.app/api/users/register", formData);
   const {accessToken} = res.data;
